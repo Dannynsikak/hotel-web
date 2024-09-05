@@ -30,6 +30,7 @@ const Details = () => {
       }
     };
     fetchHotelData();
+    // eslint-disable-next-line
   }, []);
   if (isLoading) return <div className="loading" />;
 
