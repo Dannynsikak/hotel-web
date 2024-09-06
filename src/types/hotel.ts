@@ -21,3 +21,16 @@ export interface NewHotelType {
   title?: string;
   totalPrice?: string;
 }
+
+export interface AddHotelType {
+  country: string;
+  description: string;
+  features: string;
+  location: string;
+  perNight: string;
+  region: string;
+  review: string;
+  stars: string;
+  title: string;
+  totalPrice: string;
+}

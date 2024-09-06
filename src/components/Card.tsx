@@ -24,7 +24,9 @@ const Card = () => {
   // console.log(hotels, "hotels");
   return (
     <div className="card">
-      <h2 className="title font-bold text-[2rem]">All Hotels</h2>
+      <h2 className="title font-bold text-[2rem]  mb-[4em] sm:mb-0">
+        All Hotels
+      </h2>
       {hotels.length > 0 ? (
         <div>
           {hotels.map((hotel) => (

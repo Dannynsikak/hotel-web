@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NewHotelType } from "../types/hotel";
-import { Frame1 } from "../img";
+// import { Frame1 } from "../img";
 import "../index.css";
 import { Link } from "react-router-dom";
 import Edit from "./Edit";
@@ -17,7 +17,7 @@ const Information = ({ hotel, detailsPage }: IProps) => {
     <div className="hotel-preview">
       <div className="image-container">
         <img
-          src={Frame1}
+          src={hotel.location}
           className="location-image inline-block max-w-[100%]"
           alt="Hotel"
         />
