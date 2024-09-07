@@ -1,3 +1,5 @@
+import { FieldValue, Timestamp } from "firebase/firestore";
+
 export interface NewHotelType {
   //   country: "USA";
   //   description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, dolore saepe eaque eligendi soluta corporis totam omnis! Perferendis, nihil dolor? Consectetur, sapiente! Animi ipsum cum unde praesentium, officiis illum consectetur!Lorem";
@@ -9,6 +11,7 @@ export interface NewHotelType {
   //   review: "997";
   //   stars: "3";
   //   title: "Ohema House";
+  createdAt?: Timestamp;
   id?: string;
   country?: string;
   description?: string;
@@ -33,4 +36,5 @@ export interface AddHotelType {
   stars: string;
   title: string;
   totalPrice: string;
+  createdAt: FieldValue;
 }

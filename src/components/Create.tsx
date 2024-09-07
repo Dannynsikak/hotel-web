@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addHotel } from "../lib/controller";
+import { serverTimestamp } from "firebase/firestore";
 
 const Create = () => {
   const [title, setTitle] = useState("");
@@ -30,6 +31,7 @@ const Create = () => {
       review,
       totalPrice,
       perNight,
+      createdAt: serverTimestamp(),
     });
     console.log("successfulyy added a new hotel");
     navigate("/");

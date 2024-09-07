@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { MdOutlineSegment } from "react-icons/md";
+import NavBarModel from "./NavBarModel";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+  const onCloseModal = () => setShowModal(false);
   return (
     <nav className="navbar">
       <h1>Dashboard</h1>
@@ -15,8 +22,11 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="block md:hidden">
-        <MdOutlineSegment className="size-7" />
+        <MdOutlineSegment className="size-7" onClick={toggleModal} />
       </div>
+      {showModal && (
+        <NavBarModel onClose={onCloseModal} showModal={showModal} />
+      )}
     </nav>
   );
 };
