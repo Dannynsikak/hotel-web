@@ -57,6 +57,7 @@ const Information = ({ hotel, detailsPage }: IProps) => {
                 <Edit
                   editDescription={editDecription}
                   setEditDescription={setEditDescription}
+                  id={hotel.id}
                 />
               ) : null}
             </p>
