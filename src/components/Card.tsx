@@ -43,7 +43,7 @@ const Card = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // Show a loading state
+    return <div className="text-center">Loading...</div>; // Show a loading state
   }
 
   if (error) {
@@ -91,7 +91,9 @@ const Card = () => {
           ))}
         </div>
       ) : (
-        <h2 className="no-hotels">There are no hotels. Please add one.</h2>
+        <h2 className="no-hotels text-center">
+          There are no hotels. Please add one.
+        </h2>
       )}
     </div>
   );
