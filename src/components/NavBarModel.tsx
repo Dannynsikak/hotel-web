@@ -1,5 +1,7 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../lib/controller";
 
 type Props = {
   onClose: () => void;
@@ -7,6 +9,15 @@ type Props = {
 };
 
 const NavBarModel: React.FC<Props> = ({ onClose, showModal }) => {
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate("/signUp"); // redirect to the signup screen after logout
+    } catch (error) {
+      console.log("Error logging out:", error);
+    }
+  };
   return (
     <div className="h-[50%]">
       {/* Overlay to cover the whole screen and sit under the modal */}
@@ -40,6 +51,12 @@ const NavBarModel: React.FC<Props> = ({ onClose, showModal }) => {
           >
             New Hotels
           </Link>
+          <button
+            onClick={handleLogout}
+            className="text-white bg-red-500 p-[.5em] rounded mt-[1.5em]"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </div>
