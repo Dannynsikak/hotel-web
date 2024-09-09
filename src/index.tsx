@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import SignUp from "./components/SignUp";
+// import SignUp from "./components/SignUp";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -15,7 +15,7 @@ root.render(
     <BrowserRouter>
       {" "}
       <NavBar />
-      <SignUp />
+      {/* <SignUp /> */}
       <App />
     </BrowserRouter>
   </React.StrictMode>
